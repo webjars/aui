@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>aui</artifactId>
-    <version>5.4.3</version>
+    <version>5.4.4-SNAPSHOT</version>
     <name>Atlassian User Interface</name>
     <description>WebJar for Atlassian User Interface</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/aui</url>
         <connection>scm:git:https://github.com/webjars/aui.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/aui.git</developerConnection>
-        <tag>aui-5.4.3</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <properties>
