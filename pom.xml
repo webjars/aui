@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>aui</artifactId>
-    <version>5.4.4-SNAPSHOT</version>
+    <version>5.6.7-SNAPSHOT</version>
     <name>Atlassian User Interface</name>
     <description>WebJar for Atlassian User Interface</description>
     <url>http://webjars.org</url>
@@ -21,6 +21,11 @@
             <id>jamesward</id>
             <name>James Ward</name>
             <email>james@jamesward.com</email>
+        </developer>
+        <developer>
+            <id>dzagorovsky</id>
+            <name>Dmitry Zagorovsky</name>
+            <email>dzagorovsky@stiltsoft.com</email>
         </developer>
     </developers>
 
@@ -41,8 +46,8 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.4.3</upstream.version>
-        <upstream.commit>8ca5bf1c4e2e</upstream.commit>
+        <upstream.version>5.6.7</upstream.version>
+        <upstream.commit>566fe4de92b5</upstream.commit>
         <upstream.url>https://bitbucket.org/atlassian/aui-dist/get</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
