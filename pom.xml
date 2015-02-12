@@ -46,9 +46,9 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.8.1</upstream.version>
-        <upstream.commit>44eea971cd42</upstream.commit>
-        <upstream.url>https://bitbucket.org/atlassian/aui-dist/get</upstream.url>
+        <upstream.version>5.8.3</upstream.version>
+        <upstream.commit>6b0ff9762ece</upstream.commit>
+        <upstream.url>https://bitbucket.org/atlassian/aui-adg-dist/get</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
 
@@ -86,7 +86,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/atlassian-aui-dist-${upstream.commit}" />
+                                    <fileset dir="${project.build.directory}/atlassian-aui-adg-dist-${upstream.commit}" />
                                 </move>
                             </target>
                         </configuration>
