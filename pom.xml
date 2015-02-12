@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>aui</artifactId>
-    <version>5.8.2-SNAPSHOT</version>
+    <version>5.8.3-SNAPSHOT</version>
     <name>Atlassian User Interface</name>
     <description>WebJar for Atlassian User Interface</description>
     <url>http://webjars.org</url>
@@ -86,7 +86,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/atlassian-aui-adg-dist-${upstream.commit}" />
+                                    <fileset dir="${project.build.directory}/atlassian-aui-adg-dist-${upstream.commit}/aui" />
                                 </move>
                             </target>
                         </configuration>
