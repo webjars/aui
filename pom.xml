@@ -46,10 +46,24 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.8.7</upstream.version>
-        <upstream.commit>33c56a10a5df</upstream.commit>
+        <upstream.version>5.8.8</upstream.version>
+        <upstream.commit>8d90878644b1</upstream.commit>
         <upstream.url>https://bitbucket.org/atlassian/aui-adg-dist/get</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "aui": "js/aui",
+                    "aui/form-validation": "js/aui-experimental",
+                    "aui/select": "js/aui-experimental"
+                },
+                "shim": {
+                    "aui": {"deps": ["jquery"], "exports": "AJS"},
+                "aui/form-validation": {"deps": ["jquery","aui"]},
+                "aui/select": {"deps": ["aui"]}
+              }
+            }
+           </requirejs>
     </properties>
 
     <build>
