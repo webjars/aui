@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>aui</artifactId>
-    <version>5.8.13-SNAPSHOT</version>
+    <version>5.8.14-SNAPSHOT</version>
     <name>Atlassian User Interface</name>
     <description>WebJar for Atlassian User Interface</description>
     <url>http://webjars.org</url>
@@ -46,8 +46,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.8.12</upstream.version>
-        <upstream.commit>3a2e2751921a</upstream.commit>
+        <upstream.version>5.8.14</upstream.version>
+        <upstream.commit>f26920e2e1da</upstream.commit>
         <upstream.url>https://bitbucket.org/atlassian/aui-adg-dist/get</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
         <requirejs>
