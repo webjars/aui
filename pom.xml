@@ -46,8 +46,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.8.14</upstream.version>
-        <upstream.commit>f26920e2e1da</upstream.commit>
+        <upstream.version>5.8.15</upstream.version>
+        <upstream.commit>52513e8ee38a</upstream.commit>
         <upstream.url>https://bitbucket.org/atlassian/aui-adg-dist/get</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
         <requirejs>
@@ -55,12 +55,18 @@
                 "paths": {
                     "aui": "js/aui",
                     "aui/form-validation": "js/aui-experimental",
-                    "aui/select": "js/aui-experimental"
+                    "aui/form-notification": "js/aui-experimental",
+                    "aui/select": "js/aui-experimental",
+                    "aui/flag": "js/aui-experimental",
+                    "aui/inline-dialog2": "js/aui-experimental"
                 },
                 "shim": {
                     "aui": {"deps": ["jquery"], "exports": "AJS"},
                     "aui/form-validation": {"deps": ["jquery","aui"]},
-                    "aui/select": {"deps": ["aui"]}
+                    "aui/form-notification": {"deps": ["jquery","aui"]},
+                    "aui/select": {"deps": ["aui"]},
+                    "aui/flag": {"deps": ["aui"]},
+                    "aui/inline-dialog2": {"deps": ["aui"]}
                 }
             }
            </requirejs>
