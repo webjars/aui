@@ -46,8 +46,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.9.4</upstream.version>
-        <upstream.commit>50245526295e</upstream.commit>
+        <upstream.version>5.9.5</upstream.version>
+        <upstream.commit>7a8b907c3856</upstream.commit>
         <upstream.url>https://bitbucket.org/atlassian/aui-adg-dist/get</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
         <requirejs>
