@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>aui</artifactId>
-    <version>5.9.22-SNAPSHOT</version>
+    <version>5.10.1-SNAPSHOT</version>
     <name>Atlassian User Interface</name>
     <description>WebJar for Atlassian User Interface</description>
     <url>http://webjars.org</url>
@@ -46,10 +46,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.9.21</upstream.version>
-        <upstream.commit>9e8adba4f35d</upstream.commit>
-        <upstream.url>https://bitbucket.org/atlassian/aui-adg-dist/get</upstream.url>
-        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <upstream.url>https://bitbucket.org/atlassian/aui-adg-dist/get/${version.unsnapshot}.zip</upstream.url>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
                 "paths": {
@@ -79,20 +77,15 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <version>1.0-beta-4</version>
+                <groupId>com.jamesward</groupId>
+                <artifactId>unsnapshot-maven-plugin</artifactId>
+                <version>0.2</version>
                 <executions>
                     <execution>
-                        <phase>process-resources</phase>
+                        <phase>initialize</phase>
                         <goals>
-                            <goal>download-single</goal>
+                            <goal>unsnapshot</goal>
                         </goals>
-                        <configuration>
-                            <url>${upstream.url}</url>
-                            <fromFile>${upstream.version}.zip</fromFile>
-                            <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -106,11 +99,18 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
+                                <echo message="download archive"/>
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
                                 <echo message="unzip archive" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
+                                <dirset id="auiDir" dir="${project.build.directory}">
+                                    <filename name="**/aui/"/>
+                                    <depth max="1" />
+                                </dirset>
+                                <echo message="auiDir = ${toString:auiDir}"/>
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/atlassian-aui-adg-dist-${upstream.commit}/aui" />
+                                    <fileset dir="${project.build.directory}/${toString:auiDir}"/>
                                 </move>
                             </target>
                         </configuration>
