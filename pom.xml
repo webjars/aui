@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>aui</artifactId>
-    <version>5.10.2-SNAPSHOT</version>
+    <version>6.0.4-SNAPSHOT</version>
     <name>Atlassian User Interface</name>
     <description>WebJar for Atlassian User Interface</description>
     <url>http://webjars.org</url>
